@@ -8,6 +8,7 @@
   "scripts": {
     "clean": "rm -rf package-lock.json node_modules dist",
     "start": "gulp",
+    "deploy": "gulp && firebase deploy",
     "prettier": "prettier --config ./.prettierrc.json --write '**/*.{html,scss,js,json,yml,md}'"
   },
   "dependencies": {

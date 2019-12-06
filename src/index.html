@@ -335,11 +335,11 @@
     </article>
     <!-- Contact -->
     <article class="container box style3">
-      <header>
+      <header id="form-response">
         <h2>Entre em contato</h2>
         <p>Preencha os campos abaixo para entrar em contato conosco.</p>
       </header>
-      <form method="post" action="class/smtp.php">
+      <form method="post" onsubmit="sendForm()">
         <div class="row 50%">
           <div class="6u 12u$(mobile)">
             <input type="text" class="text" name="name" placeholder="Nome" />

@@ -19,7 +19,6 @@ const clean = () => {
 const js = () => {
   return src('src/assets/js/*.js')
     .pipe(sourcemaps.init())
-    .pipe(uglify())
     .pipe(concat('main.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('./dist/assets/js'))
