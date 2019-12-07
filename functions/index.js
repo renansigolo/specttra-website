@@ -19,22 +19,24 @@ const transporter = nodemailer.createTransport({
 })
 
 exports.sendMail = functions.https.onRequest((req, res) => {
-  cors(req, res, () => {
+  return cors(req, res, () => {
     // getting dest email by query string
     const form = req.body
 
     const mailOptions = {
       from: 'Specttra Admin <admin@specttra.com.br>',
       to: 'renan.sigolo@gmail.com',
-      subject: 'Contato Website', // email subject
-      html: `Nome: ${form.name}
+      subject: 'Contato Website',
+      html: `
+      Nome: ${form.name}
       Email: ${form.email}
-      Mensagem: ${form.message}` // email content in HTML
+      Mensagem: ${form.message}
+      `
     }
 
     // returning result
     return transporter.sendMail(mailOptions, (err, info) => {
-      return err ? res.send(err.toString()) : res.status(200).send('Menssagem enviada com sucesso')
+      return err ? res.send(err.toString()) : res.status(200).send('Menssagem enviada com sucesso').end()
     })
   })
 })

@@ -2524,3 +2524,7 @@ button.style3:hover,
     opacity: 0.5;
   }
 }
+
+#form-response {
+  display: none;
+}

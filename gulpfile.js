@@ -1,13 +1,13 @@
 const { series, parallel, watch, src, dest } = require('gulp')
-var uglify = require('gulp-uglify')
-var postcss = require('gulp-postcss')
-var autoprefixer = require('autoprefixer')
-var sourcemaps = require('gulp-sourcemaps')
-var cssnano = require('gulp-cssnano')
-var concat = require('gulp-concat')
-var htmlmin = require('gulp-htmlmin')
-var sitemap = require('gulp-sitemap')
-var del = require('del')
+const browserSync = require('browser-sync').create()
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const sourcemaps = require('gulp-sourcemaps')
+const cssnano = require('gulp-cssnano')
+const concat = require('gulp-concat')
+const htmlmin = require('gulp-htmlmin')
+const sitemap = require('gulp-sitemap')
+const del = require('del')
 
 // delete the all content in the dist folder
 const clean = () => {
@@ -17,7 +17,7 @@ const clean = () => {
 
 // create sourcemap, minifiy and concat js
 const js = () => {
-  return src('src/assets/js/*.js')
+  return src(['node_modules/axios/dist/axios.min.js', 'src/assets/js/*.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(sourcemaps.write('.'))
@@ -69,5 +69,24 @@ const siteMap = () => {
   return Promise.resolve()
 }
 
+// Watch
+const watchFiles = () => {
+  watch('src/**/*').on('change', browserSync.reload)
+  watch('node_modules/**/*').on('change', browserSync.reload)
+}
+
+const startServer = () => {
+  browserSync.init({
+    server: {
+      baseDir: './dist/'
+    }
+  })
+
+  watchFiles()
+}
+
 // Default task
 exports.default = series(clean, htmlMin, css, js, copy, siteMap)
+
+// Start Dev Environment
+exports.watch = series(exports.default, startServer)
