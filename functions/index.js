@@ -14,13 +14,12 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: gmailEmail,
-    pass: gmailPassword
-  }
+    pass: gmailPassword,
+  },
 })
 
 exports.sendMail = functions.https.onRequest((req, res) => {
   return cors(req, res, () => {
-    // getting dest email by query string
     const form = req.body
 
     const mailOptions = {
@@ -31,12 +30,13 @@ exports.sendMail = functions.https.onRequest((req, res) => {
       Nome: ${form.name}
       Email: ${form.email}
       Mensagem: ${form.message}
-      `
+      `,
     }
 
-    // returning result
     return transporter.sendMail(mailOptions, (err, info) => {
-      return err ? res.send(err.toString()) : res.status(200).send('Menssagem enviada com sucesso').end()
+      return err
+        ? res.send(err.toString())
+        : res.status(200).send('Menssagem enviada com sucesso').end()
     })
   })
 })

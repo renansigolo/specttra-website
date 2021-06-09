@@ -9,13 +9,13 @@ const htmlmin = require('gulp-htmlmin')
 const sitemap = require('gulp-sitemap')
 const del = require('del')
 
-// delete the all content in the dist folder
+// Delete the all content in the dist folder
 const clean = () => {
   del.sync(['dist/**/*'])
   return Promise.resolve()
 }
 
-// create sourcemap, minifiy and concat js
+// Create sourcemap, minifiy and concat js
 const js = () => {
   return src(['node_modules/axios/dist/axios.min.js', 'src/assets/js/*.js'])
     .pipe(sourcemaps.init())
@@ -24,7 +24,7 @@ const js = () => {
     .pipe(dest('./dist/assets/js'))
 }
 
-// create sourcemap, autoprefix, minify and concat css
+// Create sourcemap, autoprefix, minify and concat css
 const css = () => {
   src('src/assets/css/*.css')
     .pipe(sourcemaps.init())
@@ -36,18 +36,18 @@ const css = () => {
   return Promise.resolve()
 }
 
-//htmlmin
+// Minify HTML
 const htmlMin = () => {
   return src('./src/**/*.html')
     .pipe(
       htmlmin({
-        collapseWhitespace: true
+        collapseWhitespace: true,
       })
     )
     .pipe(dest('./dist'))
 }
 
-//copy
+// Copy Assets to Dist folder
 const copy = () => {
   src(
     './src/**/*.{jpg,png,gif,xml,json,txt,svg,eot,ttf,woff,woff2,otf,ttf,php,ico,htm}'
@@ -55,21 +55,21 @@ const copy = () => {
   return Promise.resolve()
 }
 
-//create sitemap.xml
+// Create sitemap.xml
 const siteMap = () => {
   src('./src/**/*.html', {
-    read: false
+    read: false,
   })
     .pipe(
       sitemap({
-        siteUrl: 'https://www.specttra.com.br'
+        siteUrl: 'https://www.specttra.com.br',
       })
     )
     .pipe(dest('./dist'))
   return Promise.resolve()
 }
 
-// Watch
+// Watch files for live reload
 const watchFiles = () => {
   watch('src/**/*').on('change', browserSync.reload)
   watch('node_modules/**/*').on('change', browserSync.reload)
@@ -78,8 +78,8 @@ const watchFiles = () => {
 const startServer = () => {
   browserSync.init({
     server: {
-      baseDir: './dist/'
-    }
+      baseDir: './dist/',
+    },
   })
 
   watchFiles()
