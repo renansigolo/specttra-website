@@ -3,11 +3,10 @@
 const sendForm = () => {
   event.preventDefault()
 
-  
   let name = document.querySelector('[name="name"]').value
   let email = document.querySelector('[name="email"]').value
   let message = document.querySelector('[name="message"]').value
-  
+
   // Send a POST request
   axios({
     method: 'post',
@@ -15,9 +14,9 @@ const sendForm = () => {
     data: {
       name,
       email,
-      message
-    }
-  }).then(response => {
+      message,
+    },
+  }).then((response) => {
     document.querySelector('#form').style.display = 'none'
     document.querySelector('#form-response').style.display = 'block'
   })

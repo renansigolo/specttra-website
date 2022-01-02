@@ -1,17 +1,17 @@
-;(function($) {
+;(function ($) {
   var settings = {
     // Full screen header?
     fullScreenHeader: true, // Parallax background effect?
     parallax: true, // Parallax factor (lower = more intense, higher = less intense).
-    parallaxFactor: 10
+    parallaxFactor: 10,
   }
   skel.breakpoints({
     wide: '(max-width: 1680px)',
     normal: '(max-width: 1080px)',
     narrow: '(max-width: 840px)',
-    mobile: '(max-width: 736px)'
+    mobile: '(max-width: 736px)',
   })
-  $(function() {
+  $(function () {
     var $window = $(window),
       $body = $('body')
     if (skel.vars.touch) {
@@ -20,7 +20,7 @@
     }
     // Disable animations/transitions until the page has loaded.
     $body.addClass('is-loading')
-    $window.on('load', function() {
+    $window.on('load', function () {
       $body.removeClass('is-loading')
     })
     // CSS polyfills (IE<9).
@@ -28,7 +28,7 @@
     // Fix: Placeholder polyfill.
     $('form').placeholder()
     // Prioritize "important" elements on mobile.
-    skel.on('+mobile -mobile', function() {
+    skel.on('+mobile -mobile', function () {
       $.prioritize(
         '.important\\28 mobile\\29',
         skel.breakpoint('mobile').active
@@ -37,13 +37,13 @@
     // Scrolly links.
     $('.scrolly-middle').scrolly({
       speed: 1000,
-      anchor: 'middle'
+      anchor: 'middle',
     })
     $('.scrolly').scrolly({
       speed: 1000,
-      offset: function() {
+      offset: function () {
         return skel.breakpoint('mobile').active ? 70 : 190
-      }
+      },
     })
     // Full screen header.
     if (settings.fullScreenHeader) {
@@ -51,7 +51,7 @@
       if ($header.length > 0) {
         var $header_header = $header.find('header')
         $window
-          .on('resize.overflow_fsh', function() {
+          .on('resize.overflow_fsh', function () {
             if (skel.breakpoint('mobile').active) $header.css('padding', '')
             else {
               var p = Math.max(
@@ -62,7 +62,7 @@
             }
           })
           .trigger('resize.overflow_fsh')
-        $window.load(function() {
+        $window.load(function () {
           $window.trigger('resize.overflow_fsh')
         })
       }
@@ -74,7 +74,7 @@
       var $dummy = $(),
         $bg
       $window
-        .on('scroll.overflow_parallax', function() {
+        .on('scroll.overflow_parallax', function () {
           // Adjust background position.
           $bg.css(
             'background-position',
@@ -83,7 +83,7 @@
               'px'
           )
         })
-        .on('resize.overflow_parallax', function() {
+        .on('resize.overflow_parallax', function () {
           // If we're in a situation where we need to temporarily disable parallax, do so.
           if (
             !skel.breakpoint('wide').active ||
@@ -109,7 +109,7 @@
       usePopupCaption: true,
       popupLoaderText: '',
       windowMargin: 10,
-      usePopupNav: true
+      usePopupNav: true,
     })
   })
 })(jQuery)

@@ -1301,8 +1301,8 @@
 /* Basic */
 
 body {
-  background-color: #0b0b73;
-  background-image: url("images/overlay.png");
+  background-color: #000000;
+  background-image: url('images/overlay.png');
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
   background-position: top left, center 0;
@@ -1585,9 +1585,9 @@ form label {
   margin: 0 0 0.5em 0;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
+form input[type='text'],
+form input[type='email'],
+form input[type='password'],
 form select,
 form textarea {
   transition: background-color 0.35s ease-in-out;
@@ -1599,17 +1599,17 @@ form textarea {
   padding: 0.75em;
 }
 
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus,
+form input[type='text']:focus,
+form input[type='email']:focus,
+form input[type='password']:focus,
 form select:focus,
 form textarea:focus {
   background: #f8f8f8;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
+form input[type='text'],
+form input[type='email'],
+form input[type='password'],
 form select {
   line-height: 1em;
 }
@@ -1687,9 +1687,9 @@ table.default thead {
 
 /* Button */
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
 button,
 .button {
   transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
@@ -1709,17 +1709,17 @@ button,
   font-weight: 400;
 }
 
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
+input[type='button']:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
 button:hover,
 .button:hover {
-  background: #ff9500;
+  background: #DAAA00;
 }
 
-input[type="button"].style2,
-input[type="submit"].style2,
-input[type="reset"].style2,
+input[type='button'].style2,
+input[type='submit'].style2,
+input[type='reset'].style2,
 button.style2,
 .button.style2 {
   color: #3a3939;
@@ -1727,9 +1727,9 @@ button.style2,
   box-shadow: inset 0 0 0 1px #fff;
 }
 
-input[type="button"].style2:hover,
-input[type="submit"].style2:hover,
-input[type="reset"].style2:hover,
+input[type='button'].style2:hover,
+input[type='submit'].style2:hover,
+input[type='reset'].style2:hover,
 button.style2:hover,
 .button.style2:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -1737,9 +1737,9 @@ button.style2:hover,
   text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25) !important;
 }
 
-input[type="button"].style3,
-input[type="submit"].style3,
-input[type="reset"].style3,
+input[type='button'].style3,
+input[type='submit'].style3,
+input[type='reset'].style3,
 button.style3,
 .button.style3 {
   background: none;
@@ -1747,9 +1747,9 @@ button.style3,
   box-shadow: inset 0 0 0 1px #dad9d9;
 }
 
-input[type="button"].style3:hover,
-input[type="submit"].style3:hover,
-input[type="reset"].style3:hover,
+input[type='button'].style3:hover,
+input[type='submit'].style3:hover,
+input[type='reset'].style3:hover,
 button.style3:hover,
 .button.style3:hover {
   background: rgba(58, 57, 57, 0.025);
@@ -1783,7 +1783,7 @@ button.style3:hover,
   top: -4.5em;
   margin-left: -45px;
   margin-top: -33px;
-  background: url("images/arrow.svg") no-repeat;
+  background: url('images/arrow.svg') no-repeat;
 }
 
 .box:last-child {
@@ -1991,7 +1991,7 @@ button.style3:hover,
   bottom: -4.5em;
   margin-left: -45px;
   margin-bottom: -33px;
-  background: url("images/arrow.svg") no-repeat;
+  background: url('images/arrow.svg') no-repeat;
 }
 
 /* Banner */
@@ -2001,14 +2001,14 @@ button.style3:hover,
   color: #fff;
   text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
   text-align: center;
-  background: #898c90 url("images/banner.svg") bottom center no-repeat;
+  background: #898c90 url('images/banner.svg') bottom center no-repeat;
   padding: 5em 0 5em 0;
   margin: 0;
   background-size: 125% auto;
 }
 
 #banner .button {
-  color: #ff9500;
+  color: #DAAA00;
   text-shadow: 0 0 0.5px rgba(53, 184, 130, 0.25);
 }
 
@@ -2066,7 +2066,7 @@ button.style3:hover,
 }
 
 #footer a:hover {
-  color: #ff9500;
+  color: #DAAA00;
   text-shadow: 0 0 0.5px rgba(255, 149, 0, 0.25);
   border-bottom-color: rgba(255, 149, 0, 0.5);
 }
@@ -2096,7 +2096,7 @@ button.style3:hover,
 .poptrox-popup .loader {
   width: 48px;
   height: 48px;
-  background: url("images/loader.gif");
+  background: url('images/loader.gif');
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2135,7 +2135,7 @@ button.style3:hover,
   position: absolute;
   width: 96px;
   height: 64px;
-  background: url("images/poptrox-nav.svg");
+  background: url('images/poptrox-nav.svg');
   top: calc(50% - 1.5em);
   margin: -32px 0 0 0;
 }
@@ -2166,7 +2166,7 @@ button.style3:hover,
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   left: 0;
-  -ms-filter: "FlipH";
+  -ms-filter: 'FlipH';
   -webkit-filter: FlipH;
   filter: FlipH;
 }
@@ -2195,7 +2195,8 @@ button.style3:hover,
   height: 40px;
   border-radius: 100%;
   box-shadow: inset 0 0 0 1px #fff;
-  background: rgba(255, 255, 255, 0.1) url("images/poptrox-closer.svg") center center;
+  background: rgba(255, 255, 255, 0.1) url('images/poptrox-closer.svg') center
+    center;
   color: #fff !important;
 }
 
@@ -2234,8 +2235,8 @@ button.style3:hover,
 @media screen and (max-width: 840px) {
   /* Basic */
   body {
-    background-color: #0b0b73;
-    background-image: url("images/overlay.png");
+    background-color: #000000;
+    background-image: url('images/overlay.png');
     background-repeat: repeat, no-repeat;
     background-size: auto, 100% auto;
     background-position: top left, top center;
@@ -2378,9 +2379,9 @@ button.style3:hover,
 
   /* Button */
 
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
   button,
   .button {
     padding: 0.75em 0;
