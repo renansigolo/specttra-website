@@ -4,39 +4,42 @@ const nodemailer = require('nodemailer')
 const cors = require('cors')({ origin: true })
 admin.initializeApp()
 
-const gmailEmail = functions.config().gmail.email
-const gmailPassword = functions.config().gmail.pwd
+// Retrieve Cloud Environment Variables
+const { email, password } = functions.config().gmail
 
+// Create Nodemailer Transporter Config
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
   auth: {
-    user: gmailEmail,
-    pass: gmailPassword,
+    user: email,
+    pass: password,
   },
 })
 
+// Send an email with the details from the Contact Form on the website
 exports.sendMail = functions.https.onRequest((req, res) => {
   return cors(req, res, () => {
     const form = req.body
 
     const mailOptions = {
       from: 'Specttra Admin <admin@specttra.com.br>',
-      to: 'renan.sigolo@gmail.com',
-      subject: 'Contato Website',
+      to: 'comercial@specttra.com.br',
+      subject: `Contato Specttra Website | Enviado por ${form.name}`,
       html: `
-      Nome: ${form.name}
-      Email: ${form.email}
-      Mensagem: ${form.message}
-      `,
+      <h3>Nova mensagem enviada através do site da Specttra</h3>
+      <p><b>Nome: </b>${form.name}</p>
+      <p><b>Email: </b>${form.email}</p>
+      <p><b>Telefone: </b>${form.phone ? form.phone : 'N/A'}</p>
+      <p><b>Mensagem: </b>${form.message}</p>`,
     }
 
-    return transporter.sendMail(mailOptions, (err, info) => {
+    return transporter.sendMail(mailOptions, (err) => {
       return err
-        ? res.send(err.toString())
-        : res.status(200).send('Menssagem enviada com sucesso').end()
+        ? res.status(500).send(err.toString()).end()
+        : res.status(200).end()
     })
   })
 })
