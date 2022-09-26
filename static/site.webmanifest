@@ -1,0 +1,31 @@
+{
+  "id": "specttra-website",
+  "name": "Specttra",
+  "short_name": "Specttra",
+  "description": "Specttra - Soluções em Tecnologia",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "minimal-ui",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "/",
+  "splash_pages": null,
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

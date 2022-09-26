@@ -1,0 +1,37 @@
+<!-- Clientes -->
+<article class="container box style2">
+  <header>
+    <h2>Nossos clientes</h2>
+    <p>Cases de Sucesso</p>
+  </header>
+  <div class="inner gallery">
+    <div class="row 0%">
+      {{ range $.Site.Data }}
+        {{ range .clients }}
+          {{ $srcClientsThumbnail := resources.Get (printf "images/clients/thumbs/%s.png" .id) }}
+          {{ $srcClientsThumbnail := $srcClientsThumbnail.Resize "245x" }}
+
+          {{ $srcClientsFull := resources.Get (printf "images/clients/fulls/%s.png" .id) }}
+          {{ $srcClientsFull := $srcClientsFull.Resize "1600x900" }}
+
+
+          <div class="3u 12u(mobile)">
+            <a
+              href="{{ $srcClientsFull.RelPermalink }}"
+              class="image fluid animated pulse"
+            >
+              <img
+                src="{{ $srcClientsThumbnail.RelPermalink }}"
+                width="{{ $srcClientsThumbnail.Width }}"
+                height="{{ $srcClientsThumbnail.Height }}"
+                alt="{{ .title }}"
+                title="{{ .title }}"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</article>

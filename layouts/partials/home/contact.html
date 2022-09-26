@@ -1,0 +1,48 @@
+<!-- Contact -->
+<article class="container box style3">
+  <div id="form">
+    <header>
+      <h2>Entre em contato</h2>
+      <p>Preencha os campos abaixo para entrar em contato conosco.</p>
+    </header>
+    <form method="post" onsubmit="sendForm()">
+      <div class="row 50%">
+        <div class="6u 12u$(mobile)">
+          <input
+            type="text"
+            class="text"
+            name="name"
+            placeholder="Nome"
+            required
+          />
+        </div>
+        <div class="6u$ 12u$(mobile)">
+          <input
+            type="email"
+            class="text"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="12u$">
+          <textarea
+            name="message"
+            placeholder="Escreva sua mensagem aqui..."
+            required
+          ></textarea>
+        </div>
+        <div class="12u$">
+          <ul class="actions">
+            <li>
+              <input id="btn-submit" type="submit" value="Enviar" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="form-response">
+    <h2>Sua mensagem foi enviada com sucesso!</h2>
+  </div>
+</article>

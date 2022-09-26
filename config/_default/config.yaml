@@ -1,0 +1,12 @@
+baseURL: "https://specttra.com.br"
+languageCode: "pt-BR"
+title: "Specttra"
+
+disableHugoGeneratorInject: true
+enableRobotsTXT: true
+publishdir: "dist"
+minify: true
+disableKinds:
+  - taxonomy
+  - term
+  - RSS

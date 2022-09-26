@@ -1,0 +1,37 @@
+<!-- Segmentos -->
+<article class="container box style2">
+  <header>
+    <h2>Segmentos</h2>
+  </header>
+  <div class="inner gallery">
+    <div class="row 0%">
+      {{ range $.Site.Data }}
+        {{ range .areas }}
+          {{ $srcAreaThumbnail := resources.Get (printf "images/areas/thumbs/%s.png" .id) }}
+          {{ $srcAreaThumbnail := $srcAreaThumbnail.Resize "245x" }}
+
+          {{ $srcAreaFull := resources.Get (printf "images/areas/fulls/%s.png" .id) }}
+          {{ $srcAreaFull := $srcAreaFull.Resize "1600x900" }}
+
+
+          <div class="3u 12u(mobile)">
+            <a
+              href="{{ $srcAreaFull.RelPermalink }}"
+              class="image fluid animated pulse"
+            >
+              <img
+                src="{{ $srcAreaThumbnail.RelPermalink }}"
+                width="{{ $srcAreaThumbnail.Width }}"
+                height="{{ $srcAreaThumbnail.Height }}"
+                loading="lazy"
+                alt="{{ .title }}"
+                title="{{ .title }}"
+              />
+              <h4>{{ .title }}</h4>
+            </a>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</article>
