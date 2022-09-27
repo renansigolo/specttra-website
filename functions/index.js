@@ -27,7 +27,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
     const mailOptions = {
       from: 'Specttra Admin <admin@specttra.com.br>',
       to:
-        form.name === 'renan'
+        form.name === 'test'
           ? 'renan.sigolo@gmail.com'
           : 'comercial@specttra.com.br',
       subject: `Contato Specttra Website | Enviado por ${form.name}`,

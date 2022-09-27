@@ -21,16 +21,11 @@ const sendForm = () => {
     },
   })
     .then(() => {
-      document.querySelector('#form-loading').style.display = 'none';
-      document.querySelector('#form-response').style.display = 'block';
-      return 'Sua mensagem foi enviada com sucesso!';
+      document.querySelector('#form-response h2').innerHTML =
+        'Sua mensagem foi enviada com sucesso!';
     })
-    .catch((error) => {
-      document.querySelector('#form-loading').style.display = 'none';
-      document.querySelector('#form-response').style.display = 'block';
-      return error ? error : 'Ocorreu um erro ao enviar a mensagem!';
-    })
-    .finally((message) => {
-      document.querySelector('#form-response h2').innerHTML = message;
+    .catch(() => {
+      document.querySelector('#form-response h2').innerHTML =
+        'Ocorreu um erro ao enviar a mensagem :(';
     });
 };
