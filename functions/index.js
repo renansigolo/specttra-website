@@ -35,7 +35,6 @@ exports.sendMail = functions.https.onRequest((req, res) => {
       <h3>Nova mensagem enviada através do site da Specttra</h3>
       <p><b>Nome: </b>${form.name}</p>
       <p><b>Email: </b>${form.email}</p>
-      <p><b>Telefone: </b>${form.phone ? form.phone : 'N/A'}</p>
       <p><b>Mensagem: </b>${form.message}</p>`,
     };
 

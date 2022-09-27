@@ -1,4 +1,4 @@
-const sendForm = () => {
+const sendForm = async () => {
   window.event.preventDefault();
 
   // Select the form values
@@ -11,7 +11,7 @@ const sendForm = () => {
   document.querySelector('#form-response').style.display = 'block';
 
   // Send a POST request
-  axios({
+  const axiosMessage = await axios({
     method: 'post',
     url: 'https://us-central1-specttra-prod.cloudfunctions.net/sendMail',
     data: {
@@ -20,12 +20,9 @@ const sendForm = () => {
       message,
     },
   })
-    .then(() => {
-      document.querySelector('#form-response h2').innerHTML =
-        'Sua mensagem foi enviada com sucesso!';
-    })
-    .catch(() => {
-      document.querySelector('#form-response h2').innerHTML =
-        'Ocorreu um erro ao enviar a mensagem :(';
-    });
+    .then(() => 'Sua mensagem foi enviada com sucesso!')
+    .catch(() => 'Ocorreu um erro ao enviar a mensagem :(');
+
+  // Show the response
+  document.querySelector('#form-response h2').innerHTML = axiosMessage;
 };
