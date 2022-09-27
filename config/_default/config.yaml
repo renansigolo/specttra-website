@@ -2,11 +2,40 @@ baseURL: "https://specttra.com.br"
 languageCode: "pt-BR"
 title: "Specttra"
 
+cleanDestinationDir: true
 disableHugoGeneratorInject: true
 enableRobotsTXT: true
 publishdir: "dist"
 minify: true
-disableKinds:
-  - taxonomy
-  - term
-  - RSS
+disableKinds: [taxonomy, term, RSS]
+
+module:
+  mounts:
+    - source: content
+      target: content
+
+    - source: static
+      target: static
+
+    - source: layouts
+      target: layouts
+
+    - source: data
+      target: data
+
+    - source: assets
+      target: assets
+
+    - source: i18n
+      target: i18n
+
+    - source: archetypes
+      target: archetypes
+
+    - source: "node_modules/jquery/dist"
+      target: "static/modules/jquery"
+      includeFiles: ["jquery.min.js", "jquery.min.map"]
+
+    - source: "node_modules/axios/dist"
+      target: "static/modules/axios"
+      includeFiles: ["axios.min.js", "axios.min.map"]

@@ -33,24 +33,21 @@
   {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
-  {{/* Remote Scripts */}}
-  <script
-    defer
-    src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
-  ></script>
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-  ></script>
+  {{/* jQuery */}}
+  <script defer src="modules/jquery/jquery.min.js"></script>
+
+  {{/* Vendors */}}
+  {{ $vendors := resources.Match "js/vendors/*.js" }}
+  {{ $jsVendors := $vendors | resources.Concat "vendors.js" | minify | fingerprint }}
+  <script defer src="{{ $jsVendors.Permalink }}"></script>
 
   {{/* Scripts */}}
-  {{ $poptrox := resources.Get "js/01_jquery.poptrox.min.js" }}
-  {{ $skel := resources.Get "js/02_skel.min.js" }}
-  {{ $util := resources.Get "js/03_util.js" }}
-  {{ $main := resources.Get "js/04_main.js" }}
-  {{ $form := resources.Get "js/05_form.js" }}
-  {{ $js := slice $poptrox  $skel $util $main $form | resources.Concat "scripts.js" | minify | fingerprint }}
-  <script defer src="{{ $js.Permalink }}"></script>
+  {{ $main := resources.Match "js/*.js" }}
+  {{ $jsMain := $main | resources.Concat "main.js" | minify | fingerprint }}
+  <script defer src="{{ $jsMain.Permalink }}"></script>
+
+  {{/* Axios */}}
+  <script defer src="modules/axios/axios.min.js"></script>
 
   {{/* Page Title */}}
   <title>{{ .Page.Title }}</title>
