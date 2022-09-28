@@ -16,7 +16,14 @@
 
           <div class="3u 12u(mobile)">
             <a class="image fluid animate__animated animate__pulse" href="{{ $srcAreaFull.RelPermalink }}">
-              <img src="{{ $srcAreaThumbnail.RelPermalink }}" title="{{ .title }}" alt="{{ .title }}" width="{{ $srcAreaThumbnail.Width }}" height="{{ $srcAreaThumbnail.Height }}" loading="lazy">
+              <img
+                src="{{ $srcAreaThumbnail.RelPermalink }}"
+                title="{{ .title }}"
+                alt="{{ .title }}"
+                width="{{ $srcAreaThumbnail.Width }}"
+                height="{{ $srcAreaThumbnail.Height }}"
+                loading="lazy"
+              />
               <h4>{{ .title }}</h4>
             </a>
           </div>

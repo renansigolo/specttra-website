@@ -2,17 +2,20 @@
 <article class="container box style1 right" id="first">
   <a class="image fit">
     {{ $feature1 := resources.Get "images/features/feature-1.png" }}
-    <img src="{{ $feature1.RelPermalink }}" alt="Sistemas Integrados" width="{{ $feature1.Width }}"
-      height="{{ $feature1.Height }}" loading="lazy" style="width: 100%">
+    <img
+      src="{{ $feature1.RelPermalink }}"
+      alt="Sistemas Integrados"
+      width="{{ $feature1.Width }}"
+      height="{{ $feature1.Height }}"
+      loading="lazy"
+      style="width: 100%"
+    />
   </a>
   <div class="inner">
     <header>
       <h2>Sistemas Integrados</h2>
     </header>
-    <p>
-      Nossos projetos possibilitam a integração dos diversos subsistemas em uma
-      única plataforma de Monitoramento.
-    </p>
+    <p>Nossos projetos possibilitam a integração dos diversos subsistemas em uma única plataforma de Monitoramento.</p>
     <ul>
       <li>CFTV Digital com Análise de Vídeo</li>
       <li>Controle</li>
@@ -26,8 +29,13 @@
 <article class="container box style1 left">
   <a class="image fit">
     {{ $feature2 := resources.Get "images/features/feature-2.png" }}
-    <img src="{{ $feature2.RelPermalink }}" alt="Central de Monitoramento" width="{{ $feature2.Width }}"
-      height="{{ $feature2.Height }}" loading="lazy">
+    <img
+      src="{{ $feature2.RelPermalink }}"
+      alt="Central de Monitoramento"
+      width="{{ $feature2.Width }}"
+      height="{{ $feature2.Height }}"
+      loading="lazy"
+    />
   </a>
   <div class="inner">
     <header>

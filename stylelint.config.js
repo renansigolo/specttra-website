@@ -5,4 +5,5 @@ module.exports = {
     'stylelint-config-sass-guidelines',
     'stylelint-config-prettier',
   ],
+  defaultSeverity: 'error',
 };
