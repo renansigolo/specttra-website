@@ -6,5 +6,6 @@ chmod +x .git/hooks/commit-msg
 # Set pre-commit hook
 echo '#!/bin/sh
 npm run format
-npm run fix' > .git/hooks/pre-commit
+npm run fix
+npm run check' > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
