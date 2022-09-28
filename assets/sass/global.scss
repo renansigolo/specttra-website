@@ -1642,10 +1642,6 @@ form::placeholder {
   color: #5a5959 !important;
 }
 
-form:input-placeholder {
-  color: #5a5959 !important;
-}
-
 form::-moz-focus-inner {
   border: 0;
 }
@@ -1917,7 +1913,6 @@ button.style3:hover,
 
 .icon::before {
   display: inline-block;
-  font-family: FontAwesome;
   font-size: 1.25em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

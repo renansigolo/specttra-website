@@ -5,6 +5,6 @@ chmod +x .git/hooks/commit-msg
 
 # Set pre-commit hook
 echo '#!/bin/sh
-npm run lint:scss
-npm run format' > .git/hooks/pre-commit
+npm run format
+npm run lint:scss' > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
