@@ -7,5 +7,5 @@ chmod +x .git/hooks/commit-msg
 echo '#!/bin/sh
 npm run format
 npm run fix
-npm run check' > .git/hooks/pre-commit
+npm run format:check' > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
