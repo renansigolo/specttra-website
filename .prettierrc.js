@@ -5,6 +5,7 @@ module.exports = {
       files: ['*.html'],
       options: {
         parser: 'go-template',
+        printWidth: 120,
       },
     },
     {

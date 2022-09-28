@@ -1,15 +1,9 @@
 <!-- Feature 1 -->
-<article id="first" class="container box style1 right">
+<article class="container box style1 right" id="first">
   <a class="image fit">
     {{ $feature1 := resources.Get "images/features/feature-1.png" }}
-    <img
-      src="{{ $feature1.RelPermalink }}"
-      width="{{ $feature1.Width }}"
-      height="{{ $feature1.Height }}"
-      alt="Sistemas Integrados"
-      loading="lazy"
-      style="width: 100%"
-    />
+    <img src="{{ $feature1.RelPermalink }}" alt="Sistemas Integrados" width="{{ $feature1.Width }}"
+      height="{{ $feature1.Height }}" loading="lazy" style="width: 100%">
   </a>
   <div class="inner">
     <header>
@@ -32,13 +26,8 @@
 <article class="container box style1 left">
   <a class="image fit">
     {{ $feature2 := resources.Get "images/features/feature-2.png" }}
-    <img
-      src="{{ $feature2.RelPermalink }}"
-      width="{{ $feature2.Width }}"
-      height="{{ $feature2.Height }}"
-      alt="Central de Monitoramento"
-      loading="lazy"
-    />
+    <img src="{{ $feature2.RelPermalink }}" alt="Central de Monitoramento" width="{{ $feature2.Width }}"
+      height="{{ $feature2.Height }}" loading="lazy">
   </a>
   <div class="inner">
     <header>

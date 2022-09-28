@@ -2,7 +2,8 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "redhat.vscode-yaml",
-    "budparr.language-hugo-vscode"
+    "budparr.language-hugo-vscode",
+    "mrmlnc.vscode-attrs-sorter"
   ],
   "unwantedRecommendations": []
 }

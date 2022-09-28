@@ -2,20 +2,15 @@
 <section id="hero">
   <header>
     {{ $logoSpecttra := resources.Get "images/logo/specttra-square-white.svg" }}
-    <img
-      src="{{ $logoSpecttra.RelPermalink }}"
-      alt="Logo Specttra"
-      width="260"
-      height="260"
-      class="animate__animated animate__slideInDown"
-    />
+    <img class="animate__animated animate__slideInDown" src="{{ $logoSpecttra.RelPermalink }}" alt="Logo Specttra"
+      width="260" height="260">
     <h1 class="animate__animated animate__slideInDown">Specttra</h1>
     <p class="animate__animated animate__zoomIn">
       Tecnologia em Segurança Eletrônica
     </p>
   </header>
   <footer>
-    <a href="#banner" class="button style2 scrolly-middle">
+    <a class="button style2 scrolly-middle" href="#banner">
       Deslize para prosseguir
     </a>
   </footer>

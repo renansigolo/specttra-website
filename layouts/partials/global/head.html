@@ -3,26 +3,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="{{ .Site.Title }}" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="{{ .Site.Params.Description }}" />
+  <meta name="theme-color" content="{{ .Site.Params.ThemeColor }}" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
   {{/* Favicon */}}
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="icon" href="favicon.ico" />
+  <link type="image/svg+xml" href="favicon.svg" rel="icon" />
+  <link href="favicon.ico" rel="icon" />
 
   {{/* Manifest */}}
-  <link rel="manifest" href="site.webmanifest" />
+  <link href="site.webmanifest" rel="manifest" />
 
   {{/* Apple */}}
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="safari-pinned-tab.svg" rel="mask-icon" color="#5bbad5" />
 
   {{/* Custom Fonts */}}
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap"
     rel="stylesheet"
@@ -31,24 +31,27 @@
   {{/* Styles */}}
   {{ $options := (dict "targetPath" "styles.min.css" "outputStyle" "compressed") }}
   {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  <link href="{{ $style.Permalink }}" rel="stylesheet" />
 
   {{/* jQuery */}}
-  <script defer src="modules/jquery/jquery.min.js"></script>
+  <script src="modules/jquery/jquery.min.js" defer></script>
 
   {{/* Vendors */}}
   {{ $vendors := resources.Match "js/vendors/*.js" }}
   {{ $jsVendors := $vendors | resources.Concat "vendors.js" | minify | fingerprint }}
-  <script defer src="{{ $jsVendors.Permalink }}"></script>
+  <script src="{{ $jsVendors.Permalink }}" type="text/javascript" defer></script>
 
   {{/* Scripts */}}
-  {{ $main := resources.Match "js/*.js" }}
-  {{ $jsMain := $main | resources.Concat "main.js" | minify | fingerprint }}
-  <script defer src="{{ $jsMain.Permalink }}"></script>
+  {{ $jsMain := resources.Get "js/main.js" | js.Build | minify | fingerprint }}
+  <script src="{{ $jsMain.Permalink }}" type="text/javascript" defer></script>
 
-  {{/* Axios */}}
-  <script defer src="modules/axios/axios.min.js"></script>
+  {{/* Google Analytics */}}
+  {{ if hugo.IsProduction }}
+    {{ template "_internal/google_analytics.html" . }}
+  {{ end }}
 
   {{/* Page Title */}}
   <title>{{ .Page.Title }}</title>
 </head>
+
+{{ template "_internal/twitter_cards.html" . }}
