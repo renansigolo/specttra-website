@@ -1,34 +1,29 @@
-<!-- Clientes -->
-<article class="container box style2">
-  <header>
-    <h2>Nossos clientes</h2>
-    <p>Cases de Sucesso</p>
-  </header>
-  <div class="inner gallery">
-    <div class="row 0%">
-      {{ range $.Site.Data }}
+<section class="section-clients" id="clients">
+  <div class="_container">
+    {{ partial "global/header.html" (dict "title" "Cases de Sucesso" "subTitle" "Clientes") }}
+
+
+    <ul class="clients-list" role="list">
+      {{ range .Site.Data }}
         {{ range .clients }}
-          {{ $srcClientsThumbnail := resources.Get (printf "images/clients/thumbs/%s.png" .id) }}
-          {{ $srcClientsThumbnail := $srcClientsThumbnail.Resize "245x" }}
-
-          {{ $srcClientsFull := resources.Get (printf "images/clients/fulls/%s.png" .id) }}
-          {{ $srcClientsFull := $srcClientsFull.Resize "1600x900" }}
-
-
-          <div class="3u 12u(mobile)">
-            <a class="image fluid animate__animated animate__pulse" href="{{ $srcClientsFull.RelPermalink }}">
-              <img
-                src="{{ $srcClientsThumbnail.RelPermalink }}"
-                title="{{ .title }}"
-                alt="{{ .title }}"
-                width="{{ $srcClientsThumbnail.Width }}"
-                height="{{ $srcClientsThumbnail.Height }}"
-                loading="lazy"
-              />
-            </a>
-          </div>
+          {{ $image := resources.Get (printf "images/clients/%s.png" . | urlize) }}
+          {{ $image := $image.Fill "220x138 Center webp" }}
+          <li class="item">
+            <img
+              class="image group"
+              src="{{ $image.RelPermalink }}"
+              title="{{ . }}"
+              alt="{{ . }}"
+              width="{{ $image.Width }}"
+              height="{{ $image.Height }}"
+              loading="lazy"
+            />
+            <button class="absolute focus:outline-none" type="button">
+              <span class="sr-only">{{ . }}</span>
+            </button>
+          </li>
         {{ end }}
       {{ end }}
-    </div>
+    </ul>
   </div>
-</article>
+</section>

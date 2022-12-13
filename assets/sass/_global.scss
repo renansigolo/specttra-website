@@ -1,0 +1,11 @@
+@mixin bg-img($url) {
+  background-image: url("images/svg/" + $url);
+}
+
+$bg-particles-wide: "bg-particles-wide.svg";
+$bg-contact-form: "bg-contact-form.svg";
+$bg-side-pattern: "bg-side-pattern.svg";
+
+html {
+  scroll-behavior: smooth;
+}

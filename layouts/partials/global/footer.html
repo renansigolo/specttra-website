@@ -1,33 +1,23 @@
-<footer>
-  <section id="footer">
-    <ul class="icons">
-      <li>&copy; Specttra. Todos os direitos reservados</li>
-      <li>
-        <a href="https://www.facebook.com/specttra.solucoes.integradas/" class="icon" target="_blank">
-          {{ partial "helpers/fontawesome" "facebook-f" }}
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/company/specttra" class="icon" target="_blank">
-          {{ partial "helpers/fontawesome" "linkedin-in" }}
-        </a>
-      </li>
-    </ul>
-    <div class="copyright">
-      <ul class="menu">
-        <li>
-          <a
-            href="https://www.google.com.br/maps/place/Specttra+Solu%C3%A7%C3%B5es+Integradas+em+Seguran%C3%A7a+Eletr%C3%B4nica/@-23.5760906,-46.7261214,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce565ecdf03a09:0x3ed4059de3b348b1!8m2!3d-23.5760906!4d-46.7239327"
-            target="_blank"
-          >
-            R. Antônio de Castro Mendonça Furtado, 61
-          </a>
-        </li>
-        <li>Butantã</li>
-        <li>São Paulo, SP</li>
-        <li>05540-120</li>
-        <li>Tel.: +55 11 3501-4254</li>
-      </ul>
+<footer class="bg-black">
+  <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+    <div class="flex justify-center space-x-6 md:order-2">
+      <a href="https://www.facebook.com/specttra.solucoes.integradas" title="Facebook Icon" target="_blank">
+        <span class="sr-only">Facebook</span>
+        <i class="inline-block h-7 w-7 text-specttra-yellow hover:text-specttra-secondary-yellow"
+          >{{ partial "svg/facebook.svg" }}</i
+        >
+      </a>
+
+      <a href="https://www.linkedin.com/company/specttra" title="LinkedIn Icon" target="_blank">
+        <span class="sr-only">LinkedIn</span>
+        <i class="inline-block h-6 w-6 text-specttra-yellow hover:text-specttra-secondary-yellow"
+          >{{ partial "svg/linkedin.svg" }}</i
+        >
+      </a>
     </div>
-  </section>
+
+    <div class="mt-8 md:order-1 md:mt-0">
+      <p class="text-center text-base text-specttra-yellow">&copy; {{ .Site.Copyright }}</p>
+    </div>
+  </div>
 </footer>

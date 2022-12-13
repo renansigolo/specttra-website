@@ -1,0 +1,16 @@
+.section-segments {
+  > .background {
+    @include bg-img($bg-side-pattern);
+    background-repeat: no-repeat;
+    height: clamp(100px, 380px, 80vh);
+    margin-top: -25vh;
+    position: absolute;
+    right: 0;
+    transform: scaleY(1) rotate(180deg);
+    width: clamp(100px, 700px, 80vh);
+
+    @media only screen and (min-width: 1024px) {
+      height: clamp(100px, 700px, 80vh);
+    }
+  }
+}

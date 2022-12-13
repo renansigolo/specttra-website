@@ -1,0 +1,11 @@
+.section-solutions {
+  @apply bg-specttra-section-gray;
+  @include bg-img($bg-side-pattern);
+  background-repeat: no-repeat;
+  background-size: clamp(100px, 100%, 40vh) auto;
+  z-index: 0;
+
+  @media only screen and (min-width: 1024px) {
+    background-size: clamp(100px, 100%, 50vh) auto;
+  }
+}

@@ -1,18 +1,62 @@
-<!-- Hero -->
-<section id="hero">
-  <header>
-    {{ $logoSpecttra := resources.Get "images/logo/specttra-square-white.svg" }}
-    <img
-      class="animate__animated animate__slideInDown"
-      src="{{ $logoSpecttra.RelPermalink }}"
-      alt="Logo Specttra"
-      width="260"
-      height="260"
-    />
-    <h1 class="animate__animated animate__slideInDown">Specttra</h1>
-    <p class="animate__animated animate__zoomIn">Tecnologia em Segurança Eletrônica</p>
-  </header>
-  <footer>
-    <a class="button style2 scrolly-middle" href="#banner"> Deslize para prosseguir </a>
-  </footer>
+{{ $bgHero := resources.Get "images/hero/bg-hero.png" }}
+{{ $bgHero := $bgHero.Resize "1300x webp" }}
+
+
+<section>
+  <div class="relative overflow-hidden bg-white">
+    <div class="mx-auto max-w-7xl">
+      <div class="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+        {{/* Vertical Divider */}}
+        <svg
+          class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="50,0 100,0 50,100 0,100"></polygon>
+        </svg>
+
+        <div>
+          {{ partial "global/navbar.html" . }}
+        </div>
+
+        {{/* Hero Section */}}
+        <main class="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div class="text-center lg:text-left">
+            <i class="mb-5 inline-block h-auto w-80 max-w-full text-black">{{ partial "svg/specttra-logo.svg" }}</i>
+            <h1 class="text-4xl font-bold uppercase tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              <span class="block">Tecnologia em</span>
+              <span class="block text-specttra-yellow">Segurança Eletrônica</span>
+            </h1>
+            <p
+              class="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0"
+            >
+              {{ .Site.Params.ValueProposition }}
+            </p>
+            <div class="mt-5 flex justify-center sm:mt-8 lg:justify-start">
+              <div class="max-w-xs rounded-md shadow">
+                <a
+                  class="flex w-full items-center justify-center rounded-md border border-transparent bg-specttra-yellow px-8 py-3 text-base font-semibold uppercase text-white hover:bg-specttra-secondary-yellow md:py-4 md:px-10 md:text-lg"
+                  href="#contact"
+                  title="Entre em contato"
+                  >Entre em contato</a
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="hidden lg:absolute lg:inset-y-0 lg:right-0 lg:block lg:w-1/2">
+      <img
+        class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
+        src="{{ $bgHero.RelPermalink }}"
+        title="Banner Specttra"
+        alt="Banner Specttra"
+        loading="eager"
+      />
+    </div>
+  </div>
 </section>

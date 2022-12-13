@@ -1,11 +1,12 @@
-const functions = require('firebase-functions');
-const { initializeApp } = require('firebase-admin/app');
-const nodemailer = require('nodemailer');
-const cors = require('cors')({ origin: true });
-initializeApp();
+const functions = require('firebase-functions')
+const { initializeApp } = require('firebase-admin/app')
+const nodemailer = require('nodemailer')
+const cors = require('cors')({ origin: true })
+
+initializeApp()
 
 // Retrieve Cloud Environment Variables
-const { email, password } = functions.config().gmail;
+const { email, password } = functions.config().gmail
 
 // Create Nodemailer Transporter Config
 const transporter = nodemailer.createTransport({
@@ -17,15 +18,16 @@ const transporter = nodemailer.createTransport({
     user: email,
     pass: password,
   },
-});
+})
 
 // Send an email with the details from the Contact Form on the website
-exports.sendMail = functions.https.onRequest((req, res) => {
-  return cors(req, res, () => {
-    const form = req.body;
+exports.sendMail = functions.https.onRequest((req, res) =>
+  cors(req, res, () => {
+    const form = req.body
 
     const mailOptions = {
       from: 'Specttra Admin <admin@specttra.com.br>',
+      replyTo: form.email,
       to:
         form.name === 'test'
           ? 'renan.sigolo@gmail.com'
@@ -36,12 +38,12 @@ exports.sendMail = functions.https.onRequest((req, res) => {
       <p><b>Nome: </b>${form.name}</p>
       <p><b>Email: </b>${form.email}</p>
       <p><b>Mensagem: </b>${form.message}</p>`,
-    };
+    }
 
-    return transporter.sendMail(mailOptions, (err) => {
-      return err
-        ? res.status(500).send(err.toString()).end()
-        : res.status(200).end();
-    });
-  });
-});
+    return transporter.sendMail(mailOptions, (err) =>
+      err
+        ? res.status(500).send(err)
+        : res.status(200).send({ message: 'success' })
+    )
+  })
+)

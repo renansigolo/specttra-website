@@ -1,0 +1,94 @@
+{{ $integratedSystems := resources.Get "images/solutions/integrated-systems.png" }}
+{{ $integratedSystems := $integratedSystems.Resize "1240x webp" }}
+
+{{ $operationalControlCenter := resources.Get "images/solutions/operational-control-center.png" }}
+{{ $operationalControlCenter := $operationalControlCenter.Resize "1240x webp" }}
+
+
+<section class="section-solutions" id="solutions">
+  <div class="relative overflow-hidden pt-16 pb-32">
+    {{ partial "global/header.html" (dict "title" "O que fazemos?" "subTitle" "Soluções") }}
+
+
+    <div class="relative">
+      <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+        <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+          <div>
+            <div>
+              <span class="flex h-12 w-12 items-center justify-center rounded-md bg-specttra-yellow">
+                <i class="inline-block h-7 w-7">{{ partial "svg/integrated-systems.svg" }}</i>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h2 class="text-3xl font-bold uppercase tracking-tight text-gray-900">Sistemas Integrados</h2>
+              <p class="mt-4 text-xl text-gray-500">
+                Nossos projetos possibilitam a integração dos diversos subsistemas em uma única plataforma de
+                Monitoramento.
+              </p>
+            </div>
+
+            <div class="mx-auto mt-5 text-xl text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
+              <ul class="_list-disc-inside marker:text-specttra-yellow">
+                <li>CFTV Digital com Análise de Video</li>
+                <li>Controle</li>
+                <li>Sistemas de Alarmes</li>
+                <li>Centro de Controle Operacional</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 hidden sm:mt-16 lg:mt-0 lg:block">
+          <div class="-mr-48 pl-4 sm:pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+            <img
+              class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+              src="{{ $integratedSystems.RelPermalink }}"
+              title="Sistemas Integrados"
+              alt="Sistemas Integrados"
+              width="{{ $integratedSystems.Width }}"
+              height="{{ $integratedSystems.Height }}"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-24">
+      <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+        <div class="mx-auto max-w-xl px-4 sm:px-6 lg:col-start-2 lg:mx-0 lg:max-w-none lg:py-32 lg:px-0">
+          <div>
+            <div>
+              <span class="flex h-12 w-12 items-center justify-center rounded-md bg-specttra-yellow">
+                <i class="inline-block h-7 w-7">{{ partial "svg/camera.svg" }}</i>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h2 class="text-3xl font-bold uppercase tracking-tight text-gray-900">Centro de controle operacional</h2>
+              <p class="mt-4 text-xl text-gray-500">Gestão Integrada:</p>
+            </div>
+            <div class="mx-auto mt-5 text-xl text-gray-500 lg:col-start-1 lg:row-end-1 lg:max-w-none">
+              <ul class="_list-disc-inside list-inside list-disc marker:text-specttra-yellow">
+                <li>Proteção efetiva do patrimônio</li>
+                <li>Detecção imediata das ocorrências</li>
+                <li>Monitoramento integrado em tempo real</li>
+                <li>Acionamento do plan de contingência</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 hidden sm:mt-16 lg:col-start-1 lg:mt-0 lg:block">
+          <div class="-ml-48 pr-4 sm:pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+            <img
+              class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+              src="{{ $operationalControlCenter.RelPermalink }}"
+              title="Centro de controle operacional"
+              alt="Centro de controle operacional"
+              width="{{ $operationalControlCenter.Width }}"
+              height="{{ $operationalControlCenter.Height }}"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

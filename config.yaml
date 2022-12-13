@@ -3,45 +3,52 @@ baseURL: "https://specttra.com.br"
 languageCode: "pt-BR"
 title: "Specttra"
 googleAnalytics: "G-00HBCNRZ09"
+copyright: Specttra. Todos os direitos reservados.
 
 # Custom variables
 params:
-  description: "Specttra - Soluções em Tecnologia"
+  description: "Tecnologia em Segurança Eletrônica"
+  valueProposition: "Inovação e Tecnologia, para garantir a sua segurança"
   images: [site-feature-image.png]
   themeColor: "#000000"
+  sendMailUrl: "https://us-central1-specttra-prod.cloudfunctions.net/sendMail"
+
+# Menu settings
+menu:
+  main:
+    - identifier: quem-somos
+      name: Quem Somos
+      url: "#specttra"
+      weight: 1
+
+    - identifier: solucoes
+      name: Soluções
+      url: "#solutions"
+      weight: 2
+
+    - identifier: segmentos
+      name: Segmentos
+      url: "#segments"
+      weight: 3
+
+    - identifier: clientes
+      name: Clientes
+      url: "#clients"
+      weight: 4
+
+    - identifier: contato
+      name: Contato
+      url: "#contact"
+      weight: 5
 
 # Build Configuration
 cleanDestinationDir: true
 disableHugoGeneratorInject: true
 enableRobotsTXT: true
-publishdir: "dist"
 minify: true
+publishdir: "dist"
+removePathAccents: true
 disableKinds: [taxonomy, term, RSS]
-
-# Virtual Modules
-module:
-  mounts:
-    - source: content
-      target: content
-
-    - source: static
-      target: static
-
-    - source: layouts
-      target: layouts
-
-    - source: data
-      target: data
-
-    - source: assets
-      target: assets
-
-    - source: i18n
-      target: i18n
-
-    - source: archetypes
-      target: archetypes
-
-    - source: "node_modules/jquery/dist"
-      target: "static/modules/jquery"
-      includeFiles: ["jquery.min.js", "jquery.min.map"]
+build:
+  noJSConfigInAssets: true
+  writeStats: true

@@ -1,0 +1,5 @@
+/* Section - Specttra */
+.section-specttra {
+  @apply bg-black;
+  @include bg-img($bg-particles-wide);
+}

@@ -10,6 +10,35 @@
     ],
     "headers": [
       {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "base-uri 'none'; default-src 'self'; object-src 'none'; script-src 'none'; script-src-elem 'self' https://*.googletagmanager.com 'unsafe-inline'; connect-src https://us-central1-specttra-prod.cloudfunctions.net; require-trusted-types-for 'script';"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "no-referrer-when-downgrade"
+          },
+          {
+            "key": "Strict-Transport-Security",
+            "value": "max-age=63072000; includeSubDomains; preload"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-DNS-Prefetch-Control",
+            "value": "on"
+          }
+        ]
+      },
+      {
         "source": "/**",
         "headers": [
           {
@@ -19,7 +48,7 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|png|gif|webp)",
+        "source": "**/*.@(jpg|jpeg|png|gif|webp|svg)",
         "headers": [
           {
             "key": "Cache-Control",

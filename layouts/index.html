@@ -1,15 +1,10 @@
 {{ define "main" }}
   <main>
-    {{ partial "home/hero" }}
-
-    {{ partial "home/banner" }}
-
-    {{ partial "home/features" }}
-
-    {{ partial "home/areas" . }}
-
+    {{ partial "home/hero" . }}
+    {{ partial "home/specttra" }}
+    {{ partial "home/solutions" }}
+    {{ partial "home/segments" . }}
     {{ partial "home/clients" . }}
-
     {{ partial "home/contact" }}
   </main>
 {{ end }}

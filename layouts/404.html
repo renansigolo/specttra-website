@@ -1,9 +1,35 @@
 {{ define "main" }}
   <main>
-    <div>
-      <h1 style="text-align: center; color: #fff; border-bottom: none">
-        <a href="/" style="border-bottom: none">Voltar à pagina inicial</a>
-      </h1>
-    </div>
+    <section class="h-screen">
+      <div class="flex min-h-full flex-col bg-white pt-16 pb-12">
+        <main class="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-center">
+            <a class="inline-flex" href="/" title="Logo Specttra">
+              <span class="sr-only">Specttra</span>
+              <i class="inline-block h-12 w-12 text-black">{{ partial "svg/specttra-icon.svg" }}</i>
+            </a>
+          </div>
+          <div class="py-16">
+            <div class="text-center">
+              <p class="text-base font-semibold text-specttra-yellow">404</p>
+              <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Página não encontrada.</h1>
+              <p class="mt-2 text-base text-gray-500">
+                Ops, não conseguimos encontrar a página que você está procurando.
+              </p>
+              <div class="mt-6">
+                <a
+                  class="text-base font-medium text-specttra-yellow hover:text-specttra-secondary-yellow"
+                  href="/"
+                  title="Voltar a página inicial"
+                >
+                  Voltar a página inicial
+                  <span aria-hidden="true"> &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
   </main>
 {{ end }}

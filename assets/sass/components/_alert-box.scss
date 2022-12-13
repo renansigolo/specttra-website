@@ -1,0 +1,28 @@
+@mixin notification-icon($color: yellow) {
+  @apply mx-auto flex h-12 w-12 items-center justify-center rounded-full;
+  @apply text-#{$color}-600 bg-#{$color}-100;
+}
+
+.alert-box {
+  @apply grid h-full place-content-center;
+
+  &.-success > .icon {
+    @include notification-icon("green");
+  }
+
+  &.-error > .icon {
+    @include notification-icon("red");
+  }
+
+  > .body {
+    @apply mt-3 text-center sm:mt-5;
+
+    > .title {
+      @apply text-lg font-medium leading-6 text-white;
+    }
+
+    > .text {
+      @apply mt-2 text-sm text-gray-200;
+    }
+  }
+}

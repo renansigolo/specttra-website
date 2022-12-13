@@ -1,0 +1,45 @@
+segments:
+  - id: industry
+    icon: industry
+    title: Indústria
+    description:
+
+  - id: retail
+    icon: retail
+    title: Varejo
+    description:
+
+  - id: health
+    icon: health
+    title: Saúde
+    description:
+
+  - id: construction
+    icon: construction
+    title: Construção Civil
+    description:
+
+  - id: public-sector
+    icon: public-sector
+    title: Setor Público
+    description:
+
+  - id: logistic
+    icon: logistic
+    title: Logística
+    description:
+
+  - id: education
+    icon: education
+    title: Educação
+    description:
+
+  - id: finance
+    icon: finance
+    title: Financeiro
+    description:
+
+  - id: agribusiness
+    icon: agribusiness
+    title: Agronegócio
+    description:

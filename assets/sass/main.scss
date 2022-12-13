@@ -1,5 +1,17 @@
-// Plugins
-@import "node_modules/animate.css/animate.min";
-@import "node_modules/modern-normalize/modern-normalize";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@import "fonts";
 @import "global";
+@import "helpers";
+
+@import "components/site-header";
+
+@import "components/section-specttra";
+@import "components/section-solutions";
+@import "components/section-segments";
+@import "components/section-clients";
+@import "components/section-contact";
+
+@import "components/alert-box";

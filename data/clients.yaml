@@ -1,36 +1,29 @@
 clients:
-  - id: "editora-abril"
-    title: "Editora Abril"
-
-  - id: "grupo-andreani"
-    title: "Grupo Andreani"
-
-  - id: "billabong"
-    title: "Billabong"
-
-  - id: "level-3-communications"
-    title: "Level 3 Communications"
-
-  - id: "lojas-pernambucanas"
-    title: "Lojas Pernambucanas"
-
-  - id: "ceva-logistics"
-    title: "Ceva Logistics"
-
-  - id: "transzero"
-    title: "Transzero"
-
-  - id: "violeta-supermercados"
-    title: "Violeta Supermercados"
-
-  - id: "casacor"
-    title: "CasaCor"
-
-  - id: "total-express"
-    title: "Total Express"
-
-  - id: "lebiscuit"
-    title: "LeBiscuit"
-
-  - id: "somos-educacao"
-    title: "Somos Educação"
+  - Andreani Logística
+  - Mercado Livre
+  - Le Biscuit
+  - Century Link
+  - Ceva Logistics
+  - Transzero
+  - Marimex
+  - Mauá
+  - Amcor
+  - AVS Logística
+  - Pernambucanas
+  - Cooxupe
+  - Parafix
+  - Sada Transportes
+  - Raia Drogasil
+  - Sodimac Homecenter
+  - CasaCor
+  - Groupe Lactalis
+  - Ulhoa Canto Advogados
+  # - Edificio Quadra Hungria
+  # - Condominio Martese Alto da Lapa
+  # - Condominio Costa Mare
+  # - Condominio Soberano Ipiranga
+  # - Condominio Saint Paul de Vence
+  # - Condominio Espaco São Paulo
+  # - Condominio Riservato Alto da Lapa
+  # - Condominio Manhattan Studio
+  # - Condominio Frieda

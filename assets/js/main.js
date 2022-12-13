@@ -1,7 +1,2 @@
-import { sendForm } from './modules/sendForm';
-
-(() => {
-  document
-    .querySelector('form')
-    .addEventListener('submit', (event) => sendForm(event));
-})();
+import './modules/form'
+import './modules/menu'

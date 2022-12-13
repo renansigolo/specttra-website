@@ -1,5 +1,6 @@
 /** @type {import('prettier').Config} */
 module.exports = {
+  plugins: [require('prettier-plugin-tailwindcss')],
   overrides: [
     {
       files: ['*.html'],
@@ -12,7 +13,8 @@ module.exports = {
       files: ['*.js'],
       options: {
         singleQuote: true,
+        semi: false,
       },
     },
   ],
-};
+}

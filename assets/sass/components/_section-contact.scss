@@ -1,0 +1,17 @@
+.section-contact {
+  // Something here
+}
+
+.contact-form {
+  @apply py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12;
+  @include bg-img("bg-contact-form.svg");
+  background-size: cover;
+}
+
+.form-inputs {
+  // Something here
+}
+
+.form-response {
+  @apply h-full items-end justify-center p-4 text-center sm:items-center sm:p-0;
+}
