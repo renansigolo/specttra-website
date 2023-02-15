@@ -11,10 +11,14 @@
     "url": "https://github.com/renansigolo/specttra-website/issues"
   },
   "scripts": {
-    "build": "hugo",
+    "astro": "astro",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "astro dev",
     "clean": "rm -rf .firebase $TMPDIR/hugo_cache/ dist node_modules package-lock.json resources",
     "deploy:staging": "npm run build -- -b https://specttra-prod--staging-jl3ur2x6.web.app && firebase hosting:channel:deploy staging",
     "deploy": "npm run build && firebase deploy",
+    "dev": "astro dev",
     "fix": "npm run lint:js -- --fix && npm run lint:style -- --fix && npm run format:html && npm run lint:html",
     "format:check": "prettier --check .",
     "format:html": "node scripts/sort-html.js",
@@ -23,12 +27,11 @@
     "lint:js": "eslint 'assets/js/**/*.js'",
     "lint:style": "stylelint 'assets/**/*.{scss,css}'",
     "prepare": "scripts/setup-hooks.sh",
-    "preview": "hugo --baseURL='/' && npx serve dist",
-    "start": "hugo serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@tailwindcss/forms": "0.5.3",
+    "astro": "2.0.12",
     "tailwindcss": "3.2.4"
   },
   "devDependencies": {
