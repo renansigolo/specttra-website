@@ -4,6 +4,8 @@ export interface Props {
   description: string
 }
 
+import "../assets/sass/main.scss"
+
 const { title, description } = Astro.props
 ---
 
@@ -30,7 +32,7 @@ const { title, description } = Astro.props
   <body>
     <slot />
 
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-00HBCNRZ09"
       type="text/partytown"
@@ -43,7 +45,7 @@ const { title, description } = Astro.props
       gtag("js", new Date())
 
       gtag("config", "G-00HBCNRZ09")
-    </script>
+    </script> -->
   </body>
 </html>
 
