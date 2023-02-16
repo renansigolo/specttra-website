@@ -1,0 +1,40 @@
+---
+import Header from "../global/Header.astro"
+---
+
+<section class="section-segments" id="segments">
+  <div class="background"></div>
+  <div class="relative py-16 sm:py-24 lg:py-32">
+    <div
+      class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8"
+    >
+      <Header title="Áreas de atuação da Specttra" subTitle="Segmentos" />
+
+      <div class="mt-12">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- {{ range .Site.Data }}
+            {{ range .segments }}
+              <div class="pt-6">
+                <div class="flow-root rounded-lg bg-black px-6 pb-8">
+                  <div class="-mt-6">
+                    <div>
+                      <span class="inline-flex items-center justify-center rounded-md bg-specttra-yellow p-3 shadow-lg">
+                        <i class="inline-block h-10 w-10 text-white">{{ partial (printf "svg/%s.svg" .icon) }}</i>
+                      </span>
+                    </div>
+                    <h3 class="mt-8 text-xl font-semibold tracking-tight text-specttra-yellow">{{ .title }}</h3>
+                    {{ if .description }}
+                      <p class="mt-5 text-base text-white">
+                        {{ .description }}
+                      </p>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            {{ end }}
+          {{ end }} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

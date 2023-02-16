@@ -1,7 +1,7 @@
-const functions = require('firebase-functions')
-const { initializeApp } = require('firebase-admin/app')
-const nodemailer = require('nodemailer')
-const cors = require('cors')({ origin: true })
+const functions = require("firebase-functions")
+const { initializeApp } = require("firebase-admin/app")
+const nodemailer = require("nodemailer")
+const cors = require("cors")({ origin: true })
 
 initializeApp()
 
@@ -10,8 +10,8 @@ const { email, password } = functions.config().gmail
 
 // Create Nodemailer Transporter Config
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
+  service: "gmail",
+  host: "smtp.gmail.com",
   port: 465,
   secure: true,
   auth: {
@@ -26,12 +26,12 @@ exports.sendMail = functions.https.onRequest((req, res) =>
     const form = req.body
 
     const mailOptions = {
-      from: 'Specttra Admin <admin@specttra.com.br>',
+      from: "Specttra Admin <admin@specttra.com.br>",
       replyTo: form.email,
       to:
-        form.name === 'test'
-          ? 'renan.sigolo@gmail.com'
-          : 'comercial@specttra.com.br',
+        form.name === "test"
+          ? "renan.sigolo@gmail.com"
+          : "comercial@specttra.com.br",
       subject: `Contato Specttra Website | Enviado por ${form.name}`,
       html: `
       <h3>Nova mensagem enviada através do site da Specttra</h3>
@@ -43,7 +43,7 @@ exports.sendMail = functions.https.onRequest((req, res) =>
     return transporter.sendMail(mailOptions, (err) =>
       err
         ? res.status(500).send(err)
-        : res.status(200).send({ message: 'success' })
+        : res.status(200).send({ message: "success" })
     )
   })
 )
