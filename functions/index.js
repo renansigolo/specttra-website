@@ -43,7 +43,7 @@ exports.sendMail = functions.https.onRequest((req, res) =>
     return transporter.sendMail(mailOptions, (err) =>
       err
         ? res.status(500).send(err)
-        : res.status(200).send({ message: 'success' })
+        : res.status(200).send({ message: 'success' }),
     )
-  })
+  }),
 )

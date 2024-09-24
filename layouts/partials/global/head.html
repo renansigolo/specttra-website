@@ -16,8 +16,8 @@
   <link rel="manifest" href="site.webmanifest" />
 
   {{/* Styles */}}
-  {{ $styles := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS }}
-  {{ $styles := $styles | resources.PostCSS | minify | fingerprint }}
+  {{ $styles := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main.scss" . | css.Sass }}
+  {{ $styles := $styles | css.PostCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 
   {{/* Scripts */}}

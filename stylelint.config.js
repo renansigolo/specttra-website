@@ -3,8 +3,6 @@ module.exports = {
   extends: [
     'stylelint-config-recommended-scss',
     'stylelint-config-sass-guidelines',
-    'stylelint-rscss/config',
-    'stylelint-config-prettier',
   ],
   rules: {
     'selector-max-id': null,
@@ -13,6 +11,7 @@ module.exports = {
     'selector-class-pattern': null,
     'no-invalid-position-at-import-rule': null,
     'max-nesting-depth': null,
+    '@stylistic/string-quotes': null,
     // Ignore rules conflicting with Tailwind
     'scss/at-rule-no-unknown': [
       true,
@@ -26,7 +25,6 @@ module.exports = {
         ],
       },
     ],
-    'declaration-block-trailing-semicolon': null,
     'no-descending-specificity': null,
   },
 }

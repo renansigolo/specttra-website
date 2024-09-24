@@ -62,7 +62,6 @@ const sendForm = async (event) => {
     await api.post(sendMailUrl, data)
     showTemplate(alertBoxContent.success)
   } catch (err) {
-    console.error(err)
     showTemplate(alertBoxContent.error)
   } finally {
     form.reset()

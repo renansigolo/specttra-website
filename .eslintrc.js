@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:all', 'airbnb-base', 'eslint-config-prettier'],
+  extends: ['eslint:all', 'airbnb-base', 'prettier'],
   overrides: [],
   ignorePatterns: [
     'node_modules',

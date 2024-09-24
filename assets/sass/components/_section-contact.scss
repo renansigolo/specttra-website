@@ -3,7 +3,7 @@
 }
 
 .contact-form {
-  @apply py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12;
+  @apply px-6 py-10 sm:px-10 lg:col-span-2 xl:p-12;
   @include bg-img("bg-contact-form.svg");
   background-size: cover;
 }

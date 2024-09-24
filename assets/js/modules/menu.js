@@ -18,5 +18,5 @@ const toggleMobileMenu = () => {
 
 /** Add event listener to the mobile button  */
 navToggles.forEach((item) =>
-  item.addEventListener('click', () => toggleMobileMenu())
+  item.addEventListener('click', () => toggleMobileMenu()),
 )
